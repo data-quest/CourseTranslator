@@ -15,8 +15,13 @@
         <tbody>
             <?php foreach ($courses as $course): ?>
             <tr>
-                <td><?= htmlReady($course->germanName)?></td>
-                <td><input type="hidden" name="courses[<?= $course->id?>][courseId]" value="<?= $course->id?>"><input type="text" name="courses[<?= $course->id ?>][englishName]" style="width: 99%" value="<?= htmlReady($course->englishName) ?>"></td>
+                <?php 
+                $germanName = htmlReady($course->germanName);
+                $id = htmlReady($course->id);
+                $englishName = htmlReady($course->englishName);
+                ?>
+                <td><?= $germanName ?></td>
+                <td><input type="hidden" name="courses[<?= $id?>][courseId]" value="<?= $id?>"><input type="text" name="courses[<?= $id ?>][englishName]" style="width: 99%" value="<?= $englishName ?>"></td>
             </tr>
         <?php endforeach; ?>
         </tbody>
