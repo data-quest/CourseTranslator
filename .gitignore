@@ -1,0 +1,7 @@
+nbprojects/
+.idea/
+bin/
+cache/
+api/
+vendor/
+/nbproject/private/

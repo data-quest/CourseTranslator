@@ -1,0 +1,5 @@
+pluginname=CourseTranslator
+pluginclassname=CourseTranslator
+origin=data-quest
+version=1.3
+studipMinVersion=2.3

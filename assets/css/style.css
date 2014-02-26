@@ -1,0 +1,23 @@
+form#translator-filter{
+   
+}
+form#translator-filter *{
+    width:230px;
+    margin:5px 0px;
+    padding:0px;
+}
+form#translator-filter input[type="checkbox"]{
+    width: auto;
+    margin-right: 5px;
+}
+form#translator-filter div{}
+form#translator-filter select[name="instituteName"] option{
+    padding-left:15px;
+}
+form#translator-filter select[name="instituteName"] option.faculty{
+    font-weight: bold;
+    padding-left:0px;
+}
+form#translator-filter select{
+    border:1px solid;
+}
