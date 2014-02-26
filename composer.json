@@ -1,5 +1,5 @@
 {
-    "name": "data-quest/mvvcoursetranslator",
+    "name": "data-quest/coursetranslator",
     "config":{
         "bin-dir":"bin/"
     },
