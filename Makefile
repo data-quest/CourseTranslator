@@ -9,3 +9,6 @@ update:
 
 docs:
 	bin/sami.php update --force config/api-docs.php
+
+autoload:
+	composer dump-autoload -o
