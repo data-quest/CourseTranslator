@@ -27,6 +27,6 @@
         </tbody>
     </table>
     <hr>
-    <input type="hidden" name="semesterName" value="<?= $semesterName ?>">
+    <input type="hidden" name="semesterName" value="<?= htmlReady($semesterName) ?>">
     <input type="submit" class="button" value="Speichern">
 </form>
