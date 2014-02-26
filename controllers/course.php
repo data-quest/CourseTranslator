@@ -104,7 +104,7 @@ class CourseController extends IndexController {
         $this->modified      = $modified;
         $this->render_action('list');
     }
-
+    
     public function after_filter($action, $args) {
 
         parent::after_filter($action, $args);
