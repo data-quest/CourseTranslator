@@ -4,4 +4,4 @@ bin/
 cache/
 api/
 vendor/
-/nbproject/private/
+composer.lock

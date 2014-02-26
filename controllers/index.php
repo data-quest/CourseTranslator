@@ -1,5 +1,5 @@
 <?php
-
+require_once 'app/controllers/studip_controller.php';
 class IndexController extends StudipController {
 
     /**
