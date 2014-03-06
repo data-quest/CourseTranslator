@@ -11,7 +11,8 @@ class InstituteHelper {
         $this->instituteRepository = $instituteRepository;
     }
 
-    public function createDummyInstiute($id, $name) {
+    public function createDummyInstiute($name) {
+        $id = $this->instituteRepository->getUniqueId();
         $institute = $this->instituteRepository->create($id, $name);
         $this->instituteRepository->add($institute);
     }

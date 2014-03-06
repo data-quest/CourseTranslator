@@ -40,4 +40,5 @@ interface Course {
      * @return CourseEntity[]
      */
     public function findAllByCreteria();
+    public function findByName($courseName);
 }

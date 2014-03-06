@@ -28,4 +28,5 @@ interface Semester {
      * @return SemesterEntity|null
      */
     public function findByName($semesterName);
+    public function getUniqueId();
 }

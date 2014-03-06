@@ -11,38 +11,40 @@ class CourseHelper {
     private $instituteRepository;
     private $selectedCourseName;
     private $notTranslated = false;
+
     public function __construct(CourseRepository $courseRepository, SemesterRepository $semesterRepository, InstituteRepository $instituteRepository) {
         $this->courseRepository    = $courseRepository;
         $this->semesterRepository  = $semesterRepository;
         $this->instituteRepository = $instituteRepository;
     }
 
-    public function createDummyCourse($id, $germanName, $englishName, $courseStart, $courseDuration, $semesterId, $instituteId) {
-        try {
-            $course = $this->courseRepository->findById($id);
-        } catch (Exception $ex) {
+    public function createDummyCourse($germanName, $englishName, $courseStart, $courseDuration, $semesterName, $instituteName) {
+
+
+        $course = $this->courseRepository->findByName($germanName);
+        if (!$course) {
             $startDate = new DateTime;
             $startDate->setTimestamp($courseStart);
-            $institute = $this->instituteRepository->findById($instituteId);
-
-            $course = $this->courseRepository->create($id, $germanName, $startDate,$courseDuration, $institute);
-         
+            $institute = $this->instituteRepository->findByName($instituteName);
+            $id        = $this->courseRepository->getUniqueId();
+            $course    = $this->courseRepository->create($id, $germanName, $startDate, $courseDuration, $institute);
             $course->setEnglishName($englishName);
         }
 
-
-        $semester = $this->semesterRepository->findById($semesterId);
+        $semester = $this->semesterRepository->findByName($semesterName);
 
         $course->addSemester($semester);
         $this->courseRepository->add($course);
     }
-        public function getSelectedCourseName() {
+
+    public function getSelectedCourseName() {
         return $this->selectedCourseName;
     }
 
     public function setSelectedCourseName($selectedCourseName) {
         $this->selectedCourseName = $selectedCourseName;
     }
+
     public function getNotTranslated() {
         return $this->notTranslated;
     }
@@ -50,7 +52,5 @@ class CourseHelper {
     public function setNotTranslated($notTranslated) {
         $this->notTranslated = $notTranslated;
     }
-
-
 
 }

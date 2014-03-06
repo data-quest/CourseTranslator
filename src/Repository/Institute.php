@@ -11,4 +11,5 @@ interface Institute {
     public function add(InstituteEntity $institute);
     public function findByName($instituteName);
     public function findById($instituteId);
+    public function getUniqueId();
 }

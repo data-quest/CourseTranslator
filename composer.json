@@ -1,19 +1,20 @@
 {
     "name": "data-quest/coursetranslator",
-    "config":{
-        "bin-dir":"bin/"
+    "config": {
+        "bin-dir": "bin/"
     },
-    "require-dev":{
-       "behat/behat": "2.5.*@dev",
-       "phpunit/phpunit": "3.7.*@dev",
-       "sami/sami": "1.4.*@dev"
+    "require-dev": {
+        "behat/behat": "2.5.*@dev",
+        "phpunit/phpunit": "3.7.*@dev",
+        "sami/sami": "1.4.*@dev"
     },
-     "license": "proprietary",
-    "autoload":{
-        "psr-4":{
-            "DataQuest\\Translator\\":"src/",
-            "DataQuest\\Translator\\Delivery\\":"classes/",
-            "DataQuest\\Mock\\":"mock/"
+    "license": "proprietary",
+    "autoload": {
+        "psr-4": {
+            "DataQuest\\Translator\\": "src/",
+            "DataQuest\\Translator\\Delivery\\": "classes/",
+            "DataQuest\\Mock\\": "mock/",
+            "DataQuest\\Translator\\Test\\": "tests/"
         }
     }
 }

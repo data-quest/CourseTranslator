@@ -18,12 +18,12 @@ class SemesterHelper {
     }
 
     
-    public function createDummySemester($id, $name, $start, $end) {
+    public function createDummySemester( $name, $start, $end) {
         $startDate       = new DateTime;
         $startDate->setTimestamp($start);
         $endDate         = new DateTime;
         $endDate->setTimestamp($end);
-
+        $id = $this->semesterRepository->getUniqueId();
         $semester        = $this->semesterRepository->create($id, $name,
                 $startDate, $endDate);
         $this->semesterRepository->add($semester);

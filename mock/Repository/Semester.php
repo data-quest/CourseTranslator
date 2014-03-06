@@ -36,5 +36,9 @@ class Semester implements SemesterRepository {
         }
         return null;
     }
-
+    public function getUniqueId() {
+        $countSemester = count($this->semester);
+        $countSemester++;
+        return $countSemester;
+    }
 }

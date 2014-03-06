@@ -36,7 +36,9 @@ class Course implements CourseRepository {
         return new CourseEntity($id, $germanName, $start, $duration, $institute);
     }
     public function getUniqueId() {
-        
+        $countCourses = count($this->courses);
+        $countCourses++;
+        return $countCourses;
     }
 
     public function findById($courseId) {
@@ -103,6 +105,12 @@ class Course implements CourseRepository {
         }
 
         return $found;
+    }
+    public function findByName($courseName) {
+        foreach($this->courses as $course){
+            if($course->getGermanName() === $courseName) return $course;
+        }
+        return null;
     }
 
 }

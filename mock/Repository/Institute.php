@@ -41,5 +41,9 @@ class Institute implements InstituteInterface {
         }
         return $this->institutions[$instituteId];
     }
-
+    public function getUniqueId() {
+        $countInstitutions = count($this->institutions);
+        $countInstitutions++;
+        return $countInstitutions;
+    }
 }
